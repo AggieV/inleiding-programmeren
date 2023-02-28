@@ -1,0 +1,203 @@
+/*tip van studentassistent: geef box-sizing, padding en margin in html bepaalde properties*/
+
+*,
+html {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-color: deepskyblue;
+}
+
+/*text*/
+
+h1 {
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 10em;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+/*images*/
+
+.strand {
+  margin-top: 5em;
+  z-index: -1;
+  position: absolute;
+  max-width: 100%;
+  bottom: 0%;
+  left: 0%;
+}
+
+.zee {
+  cursor: pointer;
+  background-image: url("../images/zee.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 0%;
+  width: 40em;
+  height: 16em;
+  z-index: 2;
+  overflow: hidden;
+  right: 0;
+  animation: zee 20s infinite;
+  animation-timing-function: linear;
+  }
+  
+  /*animatie zee*/
+
+  /*tip van studentassistent: gebruik background-position-x: dit bepaalt de horizontale positie van een achtergrondafbeelding*/
+  
+  @keyframes zee {
+  
+  0% {
+  background-position-x: 0px;
+  }
+
+  12% {
+  background-position-x: 100px;
+  }
+
+  25% {
+  background-position-x: 200px;
+  }
+
+  50% {
+  background-position-x: 400px;
+  }
+
+  75% {
+  background-position-x: 200px;
+  }
+
+  100% {
+  background-position-x: 0px;
+  }
+  
+  }
+
+.vrouw {
+  cursor: pointer;
+  margin-top: 1em;
+  margin-left: 3em;
+  z-index: 1;
+  position: absolute;
+}
+
+.vlammen {
+  margin-top: -9em;
+  margin-left: 3em;
+  z-index: -1;
+  position: absolute;
+  opacity: 0.0;
+}
+
+.aftersunbutton {
+  cursor: pointer;
+  max-width: 2.5em;
+  margin-top: 8em;
+  margin-left: 50em;
+  z-index: 3;
+  position: absolute;
+  opacity: 0.0;
+}
+
+/*bron: https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction*/
+
+
+.aftersunopdoen {
+  cursor: pointer;
+  max-width: 5em;
+  margin-top: -10em;
+  margin-left: 5em;
+  z-index: 1;
+  position: absolute;
+  opacity: 0.0;
+  animation: alternate infinite;
+  animation-name: aftersunopdoen;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+}
+
+@keyframes aftersunopdoen {
+  0% {
+    margin-left: calc(100% - 55em);
+    width: 100%;
+  }
+
+  100% {
+    margin-left: 10%;
+    width: 100%;
+  }
+}
+
+.pijl {
+  max-width: 4em;
+  margin-top: 2em;
+  margin-left: 70em;
+  z-index: 3;
+  position: absolute;
+  opacity: 0.0;
+
+  /*bron: https://blog.prototypr.io/making-a-jumping-box-animation-using-only-css-9b6f1635b886*/
+
+  animation: jump 1.2s infinite;
+}
+
+@keyframes jump {
+  0% { transform: translate(-50%, -50%) }
+}
+
+.spetters {
+  max-width: 20em;
+  margin-top: -20em;
+  margin-left: 60em;
+  z-index: 1;
+  position: absolute;
+  opacity: 0.0;
+}
+
+.zon {
+  cursor: pointer;
+  top: 158px;
+  left: 1149px;
+  margin-left: -10em;
+  margin-top: 1em;
+  animation: rotatesun 8s infinite linear;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1000;
+}
+
+
+@keyframes rotatesun {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+/*audio*/
+
+#audiovanaftersun {
+  margin-top: -30em;
+  opacity: 0.0;
+}
+
+#audiovanplons {
+  margin-top: -30em;
+  opacity: 0.0; 
+}
+
+#audiovanzee {
+  margin-top: -30em;
+  opacity: 0.0;
+}
